@@ -19,7 +19,7 @@
     el.classList.add('entra');
     el.style.setProperty('--i', [...el.parentNode.children].indexOf(el));
   });
-  escalonar('.sec h2, .sec__texto, .tres li, .reparto > div, .indice-curso li, .club__partes li, .precio__lista li, .faq details, .mm, .reel');
+  escalonar('.sec h2, .sec__texto, .tres li, .reparto > div, .indice-curso li, .club__partes li, .precio__lista li, .faq details, .mm, .reel, .web, .tarifa');
   $$('.calendario li').forEach((li, i) => li.style.setProperty('--i', i));
 
   const contar = el => {
