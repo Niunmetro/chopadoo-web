@@ -81,8 +81,24 @@
     }
   };
 
+  /* ---------- Titulares vivos: se estrechan un poco con la velocidad ----------
+     Con transform y no con el ancho de la letra: así el texto no se recoloca ni vibra.
+     La velocidad va suavizada dos veces y los desplazamientos lentos no cuentan. */
+  let yAntes = scrollY, vel = 0, estrecho = 0, vivo = false;
+  const respirar = () => {
+    const v = Math.abs(scrollY - yAntes);
+    yAntes = scrollY;
+    vel += (v - vel) * .12;
+    const meta = clamp((vel - 6) / 70, 0, 1) * .1;
+    estrecho += (meta - estrecho) * .08;
+    raiz.style.setProperty('--estrecho', (1 - estrecho).toFixed(4));
+    if (estrecho > .0005 || vel > .5) requestAnimationFrame(respirar);
+    else { vivo = false; vel = estrecho = 0; raiz.style.removeProperty('--estrecho'); }
+  };
+
   let pendiente = false;
   const alMover = () => {
+    if (!quieto && !vivo) { vivo = true; yAntes = scrollY; requestAnimationFrame(respirar); }
     if (pendiente) return;
     pendiente = true;
     requestAnimationFrame(() => { pendiente = false; pintarBarra(); pintarComo(); pintarPentasScroll(); });
