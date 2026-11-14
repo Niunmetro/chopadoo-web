@@ -331,8 +331,7 @@ a { color: inherit; }
   .acciones { margin-top: 14px; }
   .cab { padding-block: 12px; }
   .cab .tempo { display: none; }
-  .margen { padding-block: 10px 12px; font-size: 13px; }
-  .margen span:last-child { display: none; }
+  .margen { display: none; }
   .pentagrama { top: 14%; }
   .subtitulo { bottom: 17%; font-size: clamp(17px, 5vw, 24px); }
 

@@ -304,7 +304,7 @@
 .club__partes b { display: block; font: 800 clamp(20px, 2vw, 28px)/1.1 var(--titular); letter-spacing: -.01em; color: var(--tinta); margin-bottom: 4px; }
 .calendario ol { list-style: none; margin: 0 0 18px; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
 .calendario li { position: relative; aspect-ratio: 1; border: 1.5px solid var(--tinta); border-radius: 10px; padding: 8px; }
-.calendario li span { font: 500 10px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--gris); }
+.calendario li span { font: 500 11px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--gris); }
 .calendario li::after {
   content: ""; position: absolute; right: 16%; bottom: 16%; width: 34%; aspect-ratio: 1.25; border-radius: 50%;
   background: var(--tinta); transform: rotate(-22deg);
@@ -362,7 +362,7 @@
   .reparto { grid-template-columns: minmax(0, 1fr); }
   .calendario ol { grid-template-columns: repeat(4, 1fr); gap: 6px; }
   .calendario li { padding: 5px; }
-  .calendario li span { font-size: 9px; letter-spacing: .04em; }
+  .calendario li span { font-size: 10px; letter-spacing: .02em; }
 }
 /* el roll de «Cómo funciona» se apila en estrecho y con movimiento reducido */
 @media (max-width: 860px) {
@@ -411,6 +411,14 @@
 .web figcaption span { font: 500 12px var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--gris); }
 
 /* ---------- Precio: después ---------- */
+/* Precio de antes, tachado a mano, y debajo el de lanzamiento */
+.precio > div:first-child { container-type: inline-size; min-width: 0; }
+.sec h2.precio__cifra--antes { position: relative; width: fit-content; font-size: clamp(84px, 38cqi, 240px); color: var(--tinta-2); }
+.precio__cifra--antes i { color: inherit; }
+.precio__cifra--antes::after { content: ""; position: absolute; left: -3%; right: -3%; top: 46%; height: .075em; border-radius: 99px; background: var(--bermellon); transform: rotate(-7deg); }
+.precio__oferta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin: 18px 0 0; }
+.precio__oferta b { font-family: var(--titular); font-weight: 900; font-size: clamp(52px, 7vw, 104px); line-height: .9; letter-spacing: -.04em; color: var(--bermellon); font-variant-numeric: tabular-nums; }
+.precio__oferta span { font-family: var(--mano); font-size: clamp(18px, 1.8vw, 26px); color: var(--tinta); background: var(--rotulador); padding: 2px 10px; border-radius: 6px; transform: rotate(-2deg); }
 .precio__luego { margin: 10px 0 0; font-size: clamp(16px, 1.4vw, 19px); color: var(--tinta-2); }
 .precio__luego b { font-weight: 800; color: var(--bermellon); }
 .precio__luego s { font-weight: 800; text-decoration-thickness: 2px; text-decoration-color: var(--bermellon); }
