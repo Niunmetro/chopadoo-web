@@ -412,7 +412,8 @@
 
 /* ---------- Precio: después ---------- */
 .precio__luego { margin: 10px 0 0; font-size: clamp(16px, 1.4vw, 19px); color: var(--tinta-2); }
-.precio__luego b { font-weight: 800; }
+.precio__luego b { font-weight: 800; color: var(--bermellon); }
+.precio__luego s { font-weight: 800; text-decoration-thickness: 2px; text-decoration-color: var(--bermellon); }
 
 /* ---------- Encargo ---------- */
 .encargo h2 { max-width: 16ch; }
