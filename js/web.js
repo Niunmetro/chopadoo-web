@@ -62,7 +62,7 @@
   /* ---------- Barra: estado, avance y compás ---------- */
   const obertura = $('.obertura');
   const secciones = $$('main > section[id]');
-  const enlaces = $$('.barra__nav a');
+  const nav = $('.barra__nav'), enlaces = $$('.barra__nav a');
   const compasN = $('.barra__compas i');
   let actual = '';
   const pintarBarra = () => {
@@ -75,24 +75,14 @@
       actual = id;
       compasN.textContent = n + 1;
       enlaces.forEach(a => a.classList.toggle('aqui', a.getAttribute('href') === '#' + id));
+      /* en pantallas estrechas la tira de secciones sigue a la que toca */
+      const aqui = enlaces.find(a => a.classList.contains('aqui'));
+      if (nav.scrollWidth > nav.clientWidth) nav.scrollTo({ left: aqui ? aqui.offsetLeft - nav.clientWidth / 2 + aqui.offsetWidth / 2 : 0, behavior: quieto ? 'auto' : 'smooth' });
     }
-  };
-
-  /* ---------- Titulares vivos: se estrechan con la velocidad ---------- */
-  let yAntes = scrollY, wdth = 100, vivo = false;
-  const respirar = () => {
-    const v = Math.abs(scrollY - yAntes);
-    yAntes = scrollY;
-    const meta = 100 - Math.min(20, v * .3);
-    wdth += (meta - wdth) * .14;
-    raiz.style.setProperty('--wdth', wdth.toFixed(1));
-    if (Math.abs(100 - wdth) > .15 || v > 0) requestAnimationFrame(respirar);
-    else { vivo = false; raiz.style.setProperty('--wdth', 100); }
   };
 
   let pendiente = false;
   const alMover = () => {
-    if (!quieto && !vivo) { vivo = true; requestAnimationFrame(respirar); }
     if (pendiente) return;
     pendiente = true;
     requestAnimationFrame(() => { pendiente = false; pintarBarra(); pintarComo(); pintarPentasScroll(); });
@@ -227,6 +217,14 @@
     if (r.bottom < 0 || r.top > innerHeight) return;
     moverBatuta(clamp((innerHeight - r.top) / (innerHeight + r.height), 0, 1) * 1500 - 150);
   };
+
+  /* ---------- WhatsApp: el dicho se recoge al empezar a bajar ---------- */
+  const wa = $('.wa');
+  if (wa) {
+    const recoger = () => { if (scrollY > innerHeight * .6) { wa.dataset.dicho = 'no'; removeEventListener('scroll', recoger); } };
+    addEventListener('scroll', recoger, { passive: true });
+    recoger();
+  }
 
   /* ---------- Movimiento: se puede parar ---------- */
   const mov = $('.pie__mov');
