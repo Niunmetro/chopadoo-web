@@ -1,6 +1,7 @@
 /* Web v2 · la batuta y el compás. Sin dependencias. */
 (() => {
-  const quieto = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // la web es movimiento: se para solo si el visitante lo pide con el botón del pie
+  const quieto = (() => { try { return localStorage.getItem('chopadoo-quieta') === '1'; } catch (e) { return false; } })();
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
   const tramo = (v, a, b) => clamp((v - a) / (b - a), 0, 1);
   const suave = t => 1 - Math.pow(1 - t, 3);

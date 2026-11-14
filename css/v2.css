@@ -352,15 +352,12 @@ a { color: inherit; }
   .hueco { width: 24%; left: 14%; top: 40%; font-size: 10.5px; rotate: -5deg; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .orden .cursor { animation: none; }
-  .pieza { transition: none; }
-}
+.quieta .orden .cursor { animation: none; }
 
 /* ---------- Sin movimiento: todo a la vista y quieto ---------- */
 .pieza.alzada { rotate: 0deg; }
 .pieza { transition: scale .45s var(--sale), rotate .45s var(--sale); }
-@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+html:not(.quieta) { scroll-behavior: smooth; }
 .quieta .compas { height: auto; }
 .quieta .escena { position: relative; }
 .quieta .pieza { transition: none; }

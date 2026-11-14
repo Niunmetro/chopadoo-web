@@ -12,8 +12,35 @@
 <link rel="canonical" href="https://chopadoo.com/">
 <link rel="icon" href="img/favicon.svg">
 <link rel="stylesheet" href="css/v2.css">
+<link rel="stylesheet" href="css/web.css">
 </head>
 <body>
+<header class="barra" data-estado="portada">
+  <a class="barra__logo" href="#" aria-label="Chopadoo, inicio">Chopadoo</a>
+  <nav class="barra__nav" aria-label="Secciones">
+    <a href="#que-es">Qué es</a><a href="#como-funciona">Cómo funciona</a><a href="#muestras">Muestras</a><a href="#curso">El curso</a><a href="#club">El Club</a><a href="#precio">Precio</a><a href="#preguntas">Preguntas</a>
+  </nav>
+  <span class="barra__compas" aria-hidden="true">compás <i>1</i></span>
+  <a class="barra__quiero" href="#precio">Lo quiero</a>
+  <button class="barra__menu" type="button" aria-haspopup="dialog" aria-controls="indice">Menú</button>
+  <i class="barra__avance" aria-hidden="true"></i>
+</header>
+
+<dialog class="indice" id="indice" aria-label="Índice">
+  <form method="dialog"><button class="indice__cerrar" aria-label="Cerrar el menú">Cerrar</button></form>
+  <p class="marca-sec"><b>Índice</b><span>la partitura entera</span></p>
+  <ol>
+    <li><a href="#que-es">Qué es</a></li>
+    <li><a href="#como-funciona">Cómo funciona</a></li>
+    <li><a href="#tu-marca">Tu marca</a></li>
+    <li><a href="#muestras">Muestras</a></li>
+    <li><a href="#curso">El curso</a></li>
+    <li><a href="#club">El Club</a></li>
+    <li><a href="#precio">Precio</a></li>
+    <li><a href="#preguntas">Preguntas</a></li>
+  </ol>
+  <p class="indice__pie"><a class="boton-lleno" href="#precio">Lo quiero</a><span>Español · English, pronto</span></p>
+</dialog>
 
 <main>
 <section class="obertura" aria-label="Portada">
@@ -102,11 +129,200 @@
   </div>
 </section>
 
-<section class="nota-previa">
-  <p><strong>Estamos afinando.</strong>Chopadoo abre muy pronto. Las piezas de esta página son de un negocio inventado, Horno Lumbre, y están hechas enteras con el sistema.</p>
+<section class="sec sec--que" id="que-es" aria-labelledby="t-que">
+  <div class="sec__in que">
+    <div class="que__texto">
+      <p class="marca-sec"><b>Andante</b><span>qué es</span></p>
+      <h2 id="t-que">Un sistema que vive en tu ordenador.</h2>
+      <ol class="tres">
+        <li><b>Se instala</b> en tu ordenador con Windows. Una vez.</li>
+        <li><b>Le das una orden</b> con tus palabras, como a un ayudante.</li>
+        <li><b>Te devuelve las piezas</b> con tu marca, listas para publicar.</li>
+      </ol>
+      <p class="nota-mano">No es una app de plantillas. Es un taller que trabaja con tus colores, tu letra y tu forma de hablar.</p>
+    </div>
+    <div class="portatil" aria-hidden="true">
+      <svg viewBox="0 0 520 330" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path class="trazo" pathLength="1" d="M70 250V44a14 14 0 0 1 14-14h352a14 14 0 0 1 14 14v206"/>
+        <path class="trazo" pathLength="1" d="M20 250h480l-22 44a14 14 0 0 1-12 7H54a14 14 0 0 1-12-7z"/>
+        <path class="trazo" pathLength="1" d="M214 276h92"/>
+      </svg>
+      <p class="portatil__orden"><span>haz el reel del pan de 36 horas</span></p>
+      <img class="hoja hoja--1" src="img/pieza_reel.jpg" alt="" loading="lazy">
+      <img class="hoja hoja--2" src="img/pieza_cartel.jpg" alt="" loading="lazy">
+      <img class="hoja hoja--3" src="img/pieza_carrusel_1.jpg" alt="" loading="lazy">
+      <img class="hoja hoja--4" src="img/pieza_pagina.jpg" alt="" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="como" id="como-funciona" aria-labelledby="t-como">
+  <div class="como__escena">
+    <div class="como__cab">
+      <p class="marca-sec"><b>Moderato</b><span>cómo funciona</span></p>
+      <h2 id="t-como">Tres compases y suena.</h2>
+    </div>
+    <div class="como__pista">
+      <div class="como__rollo">
+        <article class="paso"><span class="paso__n">1</span><h3>Instalas</h3><p>Sigues el vídeo, paso a paso, y el sistema queda puesto en tu ordenador. Necesitas Windows y una cuenta de Claude Pro, que se paga aparte.</p><i class="paso__mano">una sola vez</i></article>
+        <article class="paso"><span class="paso__n">2</span><h3>Cuentas tu marca</h3><p>Nombre, colores, letra, cómo hablas y a quién. Se lo dices una vez y lo recuerda en cada pieza. No vuelves a explicarlo.</p><i class="paso__mano">tu marca, guardada</i></article>
+        <article class="paso"><span class="paso__n">3</span><h3>Pides</h3><p>«Haz el reel de la oferta del jueves». El sistema lo monta, te lo enseña y tú decides: esto sí, esto no, cambia esto.</p><i class="paso__mano">tú diriges, siempre</i></article>
+      </div>
+      <i class="como__cabezal" aria-hidden="true"></i>
+    </div>
+    <p class="como__pie" aria-hidden="true"><span class="como__num">compás 1 de 3</span><span>baja y el cabezal avanza</span></p>
+  </div>
+</section>
+
+<section class="sec sec--marca" id="tu-marca" aria-labelledby="t-marca">
+  <div class="sec__in">
+    <p class="marca-sec"><b>Tema con variaciones</b><span>tu marca, siempre igual</span></p>
+    <h2 id="t-marca">Cambia la marca. Todo cambia con ella.</h2>
+    <div class="taller">
+      <form class="mandos" autocomplete="off">
+        <label class="mandos__nombre"><span>El nombre de tu negocio</span><input type="text" name="nombre" value="Tu negocio" maxlength="22" spellcheck="false"></label>
+        <fieldset class="mandos__color"><legend>Tu color</legend>
+          <label><input type="radio" name="color" value="#D63B1B" checked><i style="--c:#D63B1B"></i><span>bermellón</span></label>
+          <label><input type="radio" name="color" value="#1F6B4A"><i style="--c:#1F6B4A"></i><span>pino</span></label>
+          <label><input type="radio" name="color" value="#2447C8"><i style="--c:#2447C8"></i><span>cobalto</span></label>
+          <label><input type="radio" name="color" value="#8A5A06"><i style="--c:#8A5A06"></i><span>ocre</span></label>
+          <label><input type="radio" name="color" value="#7A2E5C"><i style="--c:#7A2E5C"></i><span>ciruela</span></label>
+        </fieldset>
+        <p class="nota-mano">Pruébalo: escribe tu nombre y toca un color. Así recuerda el sistema tu marca en cada pieza.</p>
+      </form>
+      <div class="muestra-marca">
+        <div class="mm mm--reel"><b class="mm-sello"><i></i><span class="mm-nombre">Tu negocio</span></b><p>Lo hacemos <em>como siempre</em></p><u></u></div>
+        <div class="mm mm--cartel"><small>esta semana</small><strong class="mm-nombre">Tu negocio</strong><span>abrimos también el sábado</span></div>
+        <div class="mm mm--carrusel"><small>1 / 5</small><strong>Tres cosas que no sabías de <span class="mm-nombre">Tu negocio</span></strong><i></i></div>
+        <div class="mm mm--pagina"><header><b class="mm-nombre">Tu negocio</b><span></span><span></span><span></span></header><div><strong>Bienvenido</strong><u>Pedir cita</u></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="suite" id="muestras" aria-labelledby="t-muestras">
+  <div class="sec__in">
+    <p class="marca-sec"><b>Suite</b><span>muestras · seis negocios, seis estilos</span></p>
+    <h2 id="t-muestras">Seis reels hechos con el sistema.</h2>
+    <p class="suite__entrada">Negocios inventados, piezas de verdad. Toca uno para verlo entero y con sonido.</p>
+  </div>
+  <div class="disco" tabindex="0" aria-label="Reels de muestra, desliza a los lados">
+    <article class="reel" data-clave="fisio"><div class="reel__marco"><video muted loop playsinline preload="none" poster="media/muestras/fisio.jpg"></video><button type="button" aria-label="Ver el reel de Nudo entero y con sonido"><i></i><span>con sonido</span></button></div><p class="reel__n">01</p><h3>Nudo</h3><p class="reel__de">Fisioterapia · 0:20</p></article>
+    <article class="reel" data-clave="flores"><div class="reel__marco"><video muted loop playsinline preload="none" poster="media/muestras/flores.jpg"></video><button type="button" aria-label="Ver el reel de Flor de Martes entero y con sonido"><i></i><span>con sonido</span></button></div><p class="reel__n">02</p><h3>Flor de Martes</h3><p class="reel__de">Floristería · 0:22</p></article>
+    <article class="reel" data-clave="horno"><div class="reel__marco"><video muted loop playsinline preload="none" poster="media/muestras/horno.jpg"></video><button type="button" aria-label="Ver el reel de Horno Lumbre entero y con sonido"><i></i><span>con sonido</span></button></div><p class="reel__n">03</p><h3>Horno Lumbre</h3><p class="reel__de">Panadería · 0:20</p></article>
+    <article class="reel" data-clave="casa"><div class="reel__marco"><video muted loop playsinline preload="none" poster="media/muestras/casa.jpg"></video><button type="button" aria-label="Ver el reel de Casa Albar entero y con sonido"><i></i><span>con sonido</span></button></div><p class="reel__n">04</p><h3>Casa Albar</h3><p class="reel__de">Casa rural · 0:20</p></article>
+    <article class="reel" data-clave="asesoria"><div class="reel__marco"><video muted loop playsinline preload="none" poster="media/muestras/asesoria.jpg"></video><button type="button" aria-label="Ver el reel de Cuentas Claras entero y con sonido"><i></i><span>con sonido</span></button></div><p class="reel__n">05</p><h3>Cuentas Claras</h3><p class="reel__de">Asesoría · 0:21</p></article>
+    <article class="reel" data-clave="pelu"><div class="reel__marco"><video muted loop playsinline preload="none" poster="media/muestras/pelu.jpg"></video><button type="button" aria-label="Ver el reel de Tijera y Miel entero y con sonido"><i></i><span>con sonido</span></button></div><p class="reel__n">06</p><h3>Tijera y Miel</h3><p class="reel__de">Peluquería · 0:18</p></article>
+  </div>
+  <div class="sec__in disco__mandos"><button type="button" class="flecha" data-dir="-1" aria-label="Reels anteriores">anterior</button><button type="button" class="flecha" data-dir="1" aria-label="Reels siguientes">siguiente</button><span class="nota-mano">y no solo reels: cartel, carrusel y página salen de la misma orden</span></div>
+</section>
+
+<section class="sec sec--diriges" id="tu-diriges" aria-labelledby="t-diriges">
+  <div class="sec__in">
+    <p class="marca-sec"><b>Rubato</b><span>tú diriges</span></p>
+    <h2 id="t-diriges">La IA toca muchas notas. Las tuyas mandan.</h2>
+    <div class="pentas" aria-hidden="true"><svg class="pentas__svg" viewBox="0 0 1200 300"></svg></div>
+    <div class="reparto">
+      <div><h3>Decides tú</h3><ul><li>Qué se cuenta y a quién</li><li>Qué tono tiene tu negocio</li><li>Qué pieza vale y cuál se repite</li><li>Cuándo y dónde se publica</li></ul></div>
+      <div><h3>Toca la IA</h3><ul><li>Guion, montaje y subtítulos</li><li>Maquetar el cartel y el carrusel</li><li>Mantener tu marca igual en todo</li><li>Repetir hasta que te guste</li></ul></div>
+      <div class="reparto__no"><h3>Lo que no es</h3><ul><li>Sin avatares que hablan por ti</li><li>Sin voces clonadas</li><li>Sin piloto automático: nada se publica solo</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--curso" id="curso" aria-labelledby="t-curso">
+  <div class="sec__in curso">
+    <div>
+      <p class="marca-sec"><b>Lección</b><span>el curso</span></p>
+      <h2 id="t-curso">Un curso en vídeo para dirigir sin miedo.</h2>
+      <p class="sec__texto">No hace falta saber de diseño ni de ordenadores. Aprendes haciendo piezas para tu propio negocio.</p>
+    </div>
+    <ul class="indice-curso" aria-label="Lo que aprendes">
+      <li>Instalar el sistema, paso a paso</li>
+      <li>Contarle tu marca una vez</li>
+      <li>Tu primer reel</li>
+      <li>Cartel y carrusel de la misma idea</li>
+      <li>Tu página web</li>
+      <li>Dar órdenes que se entienden</li>
+      <li>Corregir: esto sí, esto no</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec sec--club" id="club" aria-labelledby="t-club">
+  <div class="sec__in">
+    <p class="marca-sec"><b>Ensayo</b><span>el Club</span></p>
+    <h2 id="t-club">Cada mes, un instrumento nuevo.</h2>
+    <div class="club">
+      <ul class="club__partes">
+        <li><b>Partituras</b>Herramientas y plantillas nuevas cada mes.</li>
+        <li><b>Ensayos</b>Clases en directo, que quedan grabadas.</li>
+        <li><b>La orquesta</b>Foro y comunidad, con respuesta de una persona.</li>
+        <li><b>El sistema, al día</b>Las mejoras del sistema, mientras estés dentro.</li>
+      </ul>
+      <div class="calendario">
+        <ol aria-label="Doce meses de Club">
+          <li class="dentro"><span>mes 1</span></li><li class="dentro"><span>mes 2</span></li><li class="dentro"><span>mes 3</span></li>
+          <li><span>mes 4</span></li><li><span>mes 5</span></li><li><span>mes 6</span></li><li><span>mes 7</span></li><li><span>mes 8</span></li><li><span>mes 9</span></li><li><span>mes 10</span></li><li><span>mes 11</span></li><li><span>mes 12</span></li>
+        </ol>
+        <p class="nota-mano">Los tres primeros meses van incluidos. Después, 19 € al mes o 190 € al año. Es voluntario y se cancela con un clic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fermata" aria-label="Pausa">
+  <p class="fermata__marca">Fermata</p>
+  <p class="fermata__frase">Tu negocio ya tiene algo que contar. Solo le faltaba orquesta.</p>
+</section>
+
+<section class="sec sec--precio" id="precio" aria-labelledby="t-precio">
+  <div class="sec__in precio">
+    <div>
+      <p class="marca-sec"><b>Finale</b><span>precio de lanzamiento</span></p>
+      <h2 id="t-precio" class="precio__cifra"><span class="cifra" data-hasta="197">197</span><i>€</i></h2>
+      <p class="precio__unico">pago único</p>
+    </div>
+    <div class="precio__lista">
+      <ul>
+        <li>El sistema, instalado en tu ordenador</li>
+        <li>El curso en vídeo</li>
+        <li>Tres meses de Club</li>
+        <li>Garantía de 15 días</li>
+      </ul>
+      <p class="precio__aviso"><b>Abre muy pronto.</b> Todavía no está a la venta.</p>
+      <p class="precio__letra">Necesitas un ordenador con Windows y una cuenta de Claude Pro, que se paga aparte.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec--preguntas" id="preguntas" aria-labelledby="t-preguntas">
+  <div class="sec__in preguntas">
+    <div>
+      <p class="marca-sec"><b>Coda</b><span>preguntas</span></p>
+      <h2 id="t-preguntas">Antes de decidir.</h2>
+    </div>
+    <div class="faq">
+      <details><summary>¿Qué necesito para usarlo?</summary><p>Un ordenador con Windows y una cuenta de Claude Pro, que se paga aparte. No hace falta saber programar ni diseñar.</p></details>
+      <details><summary>¿Solo hace reels?</summary><p>No. De la misma orden salen el reel, el cartel, el carrusel y la página web. Y cada mes llega una herramienta nueva al Club.</p></details>
+      <details><summary>¿Las piezas llevan mi marca?</summary><p>Sí. Le cuentas tu nombre, tus colores y tu forma de hablar una vez, y la usa en todo.</p></details>
+      <details><summary>¿Se publica algo sin que yo lo vea?</summary><p>Nunca. El sistema monta y te enseña. Tú decides qué se queda, qué se cambia y qué se publica.</p></details>
+      <details><summary>¿Y si no me convence?</summary><p>Tienes 15 días de garantía para pedir la devolución.</p></details>
+      <details><summary>¿El Club es obligatorio?</summary><p>No. Los tres primeros meses van incluidos. Después es voluntario: 19 € al mes o 190 € al año, y se cancela con un clic.</p></details>
+    </div>
+  </div>
 </section>
 </main>
 
+<footer class="pie">
+  <div class="sec__in">
+    <p class="pie__lema">La IA toca. <span>Tú diriges.</span></p>
+    <p class="pie__letra">Chopadoo · chopadoo.com · Los negocios de esta página son inventados y sus piezas están hechas con el sistema.</p>
+    <button type="button" class="pie__mov">Parar el movimiento</button>
+  </div>
+</footer>
+
 <script src="js/v2.js" defer></script>
+<script src="js/web.js" defer></script>
 </body>
 </html>
